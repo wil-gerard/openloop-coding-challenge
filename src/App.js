@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+// import { useCallback, useState } from 'react';
+
+import AddUserForm from './components/AddUserForm';
+// import { User } from '../../../types';
+// import UserList from '../UserList';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+  // const onSubmit = useCallback(() => {
+  //   setUsers([user, ...users])
+  // }
+
+    return (
+      <div>
+        <div>
+          <div>
+            <h1>Add Users</h1>
+          </div>
+          <div>
+            <AddUserForm />
+          </div>
+          {/* <div className={styles.col}>
+          <UserList removeUser={removeUser} users={users} />
+        </div> */}
+        </div>
+      </div>
+    )
 }
 
 export default App;
