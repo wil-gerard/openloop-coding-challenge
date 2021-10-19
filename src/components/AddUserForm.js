@@ -16,38 +16,6 @@ import * as yup from 'yup';
 //   });
 // }
 
-
-// custom validation function that returns an object with keys symmetrical to useFormik's values/initialValues
-const validate = values => {
-    const errors = {}; // ---- how does the errors object get assigned the keys of useFormik's values object? ----- errors is an object created from useFormik
-    // errors is assigned to an empty object - if there are no errors, validate() returns this empty errors object
-    if (!values.firstName) { // if the user has not entered anything into first name 
-        errors.firstName = 'Required'; // then the errors object is assigns 'Required' to errors.firstName 
-    } else if (values.firstName.length > 15) { // else, if the user has entered a name over 15 characters
-        errors.firstName = 'Must be 15 characters or less'; // then the errors.firstName property is now 'Must be 15 characters or less'
-    }
-
-    if (!values.lastName) {
-        errors.lastName = 'Required';
-    } else if (values.lastName.length > 20) {
-        errors.lastName = 'Must be 20 characters or less';
-    }
-
-    if (!values.email) {
-        errors.email = 'Required';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-        errors.email = 'Invalid email address';
-    }
-
-    if (!values.note) {
-        errors.note = 'Required';
-    } else if (values.note.length > 50) {
-        errors.note = 'Must be 50 characters or less';
-    }
-
-    return errors;
-};
-
 const AddUserForm = () => {
 
 
@@ -68,8 +36,19 @@ const AddUserForm = () => {
             email: '',
             note: '',
         },
-        // We pass the UseFormik() hook a validate function that is called when form values change or fields are blurred(event that fires when element has lost focus)
-        validate,
+        // We pass the UseFormik() hook a Yup validation schema object that is called when form values change or fields are blurred(event that fires when element has lost focus)
+        validationSchema: yup.object({
+            firstName: yup.string()
+                .max(15, 'Must be 15 characters or less')
+                .required('Required'),
+            lastName: yup.string()
+                .max(20, 'Must be 20 characters or less')
+                .required('Required'),
+            email: yup.string().email('Invalid email address').required('Required'),
+            note: yup.string()
+                .max(50, 'Note must be less than 50 characters')
+                .required('Required'),
+        }),
         // We pass the UseFormik() hook a submit function that will be called when the form is submitted
         // onSubmit will only be executed if the validate function returns an empty {} errors object
         onSubmit: values => {
