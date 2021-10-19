@@ -62,12 +62,10 @@ const AddUserForm = () => {
             <label htmlFor="firstName">First Name</label>
             <input
                 id="firstName"
-                name="firstName"
                 type="text"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur} // Handles blur events - most of the time we only want to show a field's error message after our user is done typing in that field
+                {...formik.getFieldProps('firstName')} 
+                // getFieldProps is a Formik helper method that returns onChange, onBlur, value, and checked that can be spread on an input, select, or text area
                 // ref={firstInputRef}
-                value={formik.values.firstName}
             />
             {/*If the objects touched AND error have a property of firstName return a div containing the error message. else return null */}
             {/*The touched object mirrors the shape of values/initialValues. With it's values(booleans) updated by handleBlur*/}
@@ -78,35 +76,32 @@ const AddUserForm = () => {
             <label htmlFor="lastName">Last Name</label>
             <input
                 id="lastName"
-                name="lastName"
                 type="text"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.lastName}
+                {...formik.getFieldProps('lastName')} 
             />
-            {formik.errors.lastName ? <div>{formik.errors.lastName}</div> : null}
+            {formik.touched.lastName && formik.errors.lastName ? (
+                <div>{formik.errors.lastName}</div>
+            ) : null }
 
             <label htmlFor="email">Email Address</label>
             <input
                 id="email"
-                name="email"
                 type="email"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.email}
+                {...formik.getFieldProps('email')} 
             />
-            {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+            {formik.touched.email && formik.errors.email ? (
+                <div>{formik.errors.email}</div>
+            ) : null }
 
             <label htmlFor="note">Note</label>
             <input
                 id="note"
-                name="note"
                 type="text"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.note}
+                {...formik.getFieldProps('note')} 
             />
-            {formik.errors.note ? <div>{formik.errors.note}</div> : null}
+            {formik.touched.email && formik.errors.email ? (
+                <div>{formik.errors.email}</div>
+            ) : null }
 
             <button type="submit">+ Add User</button>
         </form>
