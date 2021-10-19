@@ -1,31 +1,31 @@
-// import { useCallback, useState } from 'react';
-
+import { useCallback, useState } from 'react';
 import AddUserForm from './components/AddUserForm';
 // import { User } from '../../../types';
-// import UserList from '../UserList';
+import UserList from './components/UserList'
 import './App.css';
 
 const App = () => {
+  const [users, setUsers] = useState([{"firstName":"bob", "lastName":"bilbo", "email":"www@www.com", "note":"hi"}])
 
   // const onSubmit = useCallback(() => {
   //   setUsers([user, ...users])
   // }
 
-    return (
+  return (
+    <div>
       <div>
         <div>
-          <div>
-            <h1>Add Users</h1>
-          </div>
-          <div>
-            <AddUserForm />
-          </div>
-          {/* <div className={styles.col}>
-          <UserList removeUser={removeUser} users={users} />
-        </div> */}
+          <h1>Add Users</h1>
         </div>
+        <div>
+          <AddUserForm />
+        </div>
+        <div>
+          <UserList data={users} />
+        </div>     
       </div>
-    )
+    </div>
+  )
 }
 
 export default App;
