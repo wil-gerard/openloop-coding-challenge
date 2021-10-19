@@ -5,7 +5,7 @@ import UserList from './components/UserList'
 import './App.css';
 
 const App = () => {
-  const [users, setUsers] = useState([{"firstName":"bob", "lastName":"bilbo", "email":"www@www.com", "note":"hi"}])
+  const [users, setUsers] = useState([])
 
   // const onSubmit = useCallback(() => {
   //   setUsers([user, ...users])
