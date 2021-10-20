@@ -1,6 +1,6 @@
 # OpenLoop Coding Challenge
 
-This project was completed for the software engineer application process at [OpenLoop Health](https://openloophealth.com/). The challenge was to build a form with validation that adds information to a list and allows the user to remove the information.
+This project was completed for the software engineer application process at [OpenLoop Health](https://openloophealth.com/). The challenge was to build a form with validation that adds information to a list and allows the user to remove the information. Thank you for the opportunity, OpenLoop!
 
 The developer:
 * [William Gerard](https://github.com/wil-gerard)
