@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+<p align="center">
+  <h3 align="center">OpenLoop Coding Challenge</h3>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About The Project
 
-## Available Scripts
+This project was completed for the software engineer application process at [OpenLoop Health](https://openloophealth.com/). I was tasked with building a form that displays the user's inputed first name, last name, email, and note.
 
-In the project directory, you can run:
 
-### `yarn start`
+The developer:
+* [William Gerard](https://github.com/wil-gerard)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project Requirements
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Built with React along with any other libraries that help get the job done
+- Form field should be on the left, with user submissions on the right
+- The first field in the form should autofocus on page load and after each submission
+- Form contains fields for: first name, last name, email, and note
+- Each item in the submissions list should display: first name, last name, email, and note
+- All form fields are required
+  - If a form field has a validation error, display a status message below it, and indicate the error with a red border
+  - Ensure the 'email' field value is correctly formatted
+- Disable form submissions unless the form is valid
+- Reset form on submit
+- Allow the user to remove submissions from the list
 
-### `yarn test`
+## Built With
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React.js
+- Formik
+- Yup
+- Ant Design
 
-### `yarn build`
+## Deployment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- VS Code or any similar IDE supporting JavaScript ES6
+- Node.js 14 or higher
+- Yarn or NPM
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `yarn eject`
+#### 1. Clone the repo
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`git clone https://github.com/wil-gerard/react-runner.git`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### 2. Install dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`yarn install` or `npm install`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### 3. Run App
 
-## Learn More
+`yarn start` or `npm start`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Preview
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- ![gif-preview](https://user-images.githubusercontent.com/74286884/131932092-846d76a1-c68c-49a1-979e-d406bd25c6dd.gif)
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You can check out a live preview at: [https://react-runner.netlify.app/](https://react-runner.netlify.app/) -->
