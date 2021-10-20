@@ -5,7 +5,7 @@ This project was completed for the software engineer application process at [Ope
 The developer:
 * [William Gerard](https://github.com/wil-gerard)
 
-# Project Requirements
+## Project Requirements
 
 - Built with React along with any other libraries that help get the job done
 - Form field should be on the left, with user submissions on the right
@@ -19,37 +19,40 @@ The developer:
 - Reset form on submit
 - Allow the user to remove submissions from the list
 
-# You'll have a chance to point out things you could have done differently, or things you were unsure of. Then we'll pair-program to add some features to it.
+## Project Improvements
 
-# Built With
+- Form validation to check if user name and/or email already exists.
+- Style user list for better readability
+
+## Built With
 
 - React.js
 - Formik
 - Yup
 - Ant Design
 
-# Deployment
+## Deployment
 
-## Prerequisites
+### Prerequisites
 
 - VS Code or any similar IDE supporting JavaScript ES6
 - Node.js 14 or higher
 - Yarn or NPM
 
-## Installation
+### Installation
 
-### 1. Clone the repo
+#### 1. Clone the repo
 
 `git clone https://github.com/wil-gerard/react-runner.git`
 
-### 2. Install dependencies
+#### 2. Install dependencies
 
 `yarn install` or `npm install`
 
-### 3. Run App
+#### 3. Run App
 
 `yarn start` or `npm start`
 
-# Preview
+## Preview
 
 You can check out a live preview at: [https://openloop-coding-challenge.netlify.app/](https://openloop-coding-challenge.netlify.app/)
