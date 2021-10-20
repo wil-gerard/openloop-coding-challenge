@@ -7,9 +7,21 @@ import './App.css';
 const App = () => {
   const [users, setUsers] = useState([])
 
-  // const onSubmit = useCallback(() => {
-  //   setUsers([user, ...users])
-  // }
+  const onSubmit = useCallback(
+    (user) => {
+      setUsers([user, ...users])
+    },
+    [users]
+  );
+
+  const removeUser = useCallback(
+    (idx) => {
+      const newUsers = [...users];
+      newUsers.splice(idx, 1);
+      setUsers(newUsers);
+    },
+    [users],
+  );
 
   return (
     <div>
@@ -18,11 +30,11 @@ const App = () => {
           <h1>Add Users</h1>
         </div>
         <div>
-          <AddUserForm />
+          <AddUserForm onSubmit={onSubmit} />
         </div>
         <div>
-          <UserList data={users} />
-        </div>     
+          <UserList users={users} removeUser={removeUser} />
+        </div>
       </div>
     </div>
   )
