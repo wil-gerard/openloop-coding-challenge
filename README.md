@@ -19,7 +19,7 @@ The developer:
 - Reset form on submit
 - Allow the user to remove submissions from the list
 
-## Project Improvements
+## Future Improvements
 
 - Form validation to check if user name and/or email already exists.
 - Style user list for better readability
