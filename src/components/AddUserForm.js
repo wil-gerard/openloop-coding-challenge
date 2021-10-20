@@ -1,44 +1,22 @@
-import { useRef, useEffect, useCallback } from 'react';
+import { useCallback } from 'react';
 // Formik is a form library that helps with data flow in form state, validation/error messages, and form submission handling
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik, Form, } from 'formik';
 // Yup is an object schema validation library with it's own configuration prop in Formik called validationSchema
 import * as yup from 'yup';
 import FormTextInput from './FormTextInput';
-
-
-// ----- Have someone smarter than you explain each step below -- This is how Formik explained their handleChange method -------
-// const [values, setValues] = React.useState({});
-
-// const handleChange = event => {
-//   setValues(prevValues => ({
-//     ...prevValues,
-//     // we use the name to tell Formik which key of `values` to update
-//     [event.target.name]: event.target.value
-//   });
-// }
+import { Col, Row } from 'antd'
 
 const AddUserForm = ({ onSubmit }) => {
 
-
-    // const firstInputRef = useRef<HTMLInputElement>(null)
-
-    // const focusInput = () => {
-    //     if (firstInputRef.current) {
-    //         firstInputRef.current.focus();
-    //     }
-    // }
-
     const handleSubmit = useCallback(
-        (values, { resetForm, setSubmitting }) => {
+        (values, { resetForm }) => {
             onSubmit(values);
             resetForm();
-            setSubmitting(false);
-            console.log('submitted')
+            console.log('user submitted')
         },
         [onSubmit],
     );
 
-    // Instead of managing our form’s values on our own and writing our own custom event handlers for every single input, we can just use useFormik()
     return (
         <Formik
             // <Formik> uses React Context to share values between components without having to explicity pass a prop
@@ -66,35 +44,50 @@ const AddUserForm = ({ onSubmit }) => {
             // onSubmit will only be executed if the validate function returns an empty {} errors object
             onSubmit={handleSubmit}
         >
-            <Form> {/* Render prop*/}
-                <FormTextInput
-                    label="First Name"
-                    name="firstName"
-                    type="text"
-                    placeholder="John"
-                />
-                <FormTextInput
-                    label="Last Name"
-                    name="lastName"
-                    type="text"
-                    placeholder="Doe"
-                />
-                <FormTextInput
-                    label="Email"
-                    name="email"
-                    type="email"
-                    placeholder="yourEmail@here.com"
-                />
-                <FormTextInput
-                    label="Note"
-                    name="note"
-                    type="text"
-                    placeholder="Your note here"
-                />
-
-                <button type="submit">+ Add User</button>
-            </Form>
-        </Formik>
+            {({ dirty, isValid }) => (
+                <Form> {/* Render prop*/}
+                    <Row gutter={[0, 6]} justify="space-between">
+                        <Col span={24}>
+                            <FormTextInput
+                                autoFocus={true}
+                                label="First Name"
+                                name="firstName"
+                                type="text"
+                                placeholder="First name"
+                            />
+                        </Col>
+                        <Col span={24}>
+                            <FormTextInput
+                                label="Last Name"
+                                name="lastName"
+                                type="text"
+                                placeholder="Last name"
+                            />
+                        </Col>
+                        <Col span={24}>
+                            <FormTextInput
+                                label="Email"
+                                name="email"
+                                type="email"
+                                placeholder="@email.com"
+                            />
+                        </Col>
+                        <Col span={24}>
+                            <FormTextInput
+                                label="Note"
+                                name="note"
+                                type="text"
+                                placeholder="Send us a note"
+                            />
+                        </Col>
+                        <Col span={24}>
+                            <button disabled={!dirty || !isValid} type="submit">+ Add User</button>
+                        </Col>
+                    </Row>
+                </Form>
+            )
+            }
+        </Formik >
     );
 };
 

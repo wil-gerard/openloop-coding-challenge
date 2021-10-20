@@ -5,10 +5,11 @@ const UserList = ({ users, removeUser }) => {
             {users.length === 0 && (
                 <li>No users... 😞</li>
             )}
-            {users.map(({ email, firstName, lastName, note}, idx) => (
+            {users.map(({ email, firstName, lastName, note}, userId) => (
                 <li key={email}>
-                    👋 Hey {firstName} {lastName}! note: {note} email: {email} id: {idx}
-                    <button onClick={() => removeUser(idx)}>Remove User 😞</button>
+                    👋 Hey {firstName} {lastName}! | {email}
+                    <div>{note}</div>
+                    <button onClick={() => removeUser(userId)}>Remove 😞</button>
                 </li>
             ))}
         </ul>

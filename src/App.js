@@ -1,8 +1,8 @@
 import { useCallback, useState } from 'react';
 import AddUserForm from './components/AddUserForm';
-// import { User } from '../../../types';
 import UserList from './components/UserList'
 import './App.css';
+import { Col, Row, Divider } from 'antd';
 
 const App = () => {
   const [users, setUsers] = useState([])
@@ -15,9 +15,9 @@ const App = () => {
   );
 
   const removeUser = useCallback(
-    (idx) => {
+    (userId) => {
       const newUsers = [...users];
-      newUsers.splice(idx, 1);
+      newUsers.splice(userId, 1);
       setUsers(newUsers);
     },
     [users],
@@ -25,17 +25,26 @@ const App = () => {
 
   return (
     <div>
-      <div>
-        <div>
-          <h1>Add Users</h1>
-        </div>
-        <div>
-          <AddUserForm onSubmit={onSubmit} />
-        </div>
-        <div>
-          <UserList users={users} removeUser={removeUser} />
-        </div>
-      </div>
+      <Row justify="center" gutter={[40]}>
+        <Col span={8}>
+          <div>
+            <h1>Add Users</h1>
+            <Divider />
+          </div>
+          <div>
+            <AddUserForm onSubmit={onSubmit} />
+          </div>
+        </Col>
+        <Col span={8}>
+          <div>
+            <h1>User List</h1>
+            <Divider />
+          </div>
+          <div>
+            <UserList users={users} removeUser={removeUser} />
+          </div>
+        </Col>
+      </Row>
     </div>
   )
 }
