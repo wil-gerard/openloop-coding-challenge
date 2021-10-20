@@ -4,7 +4,7 @@
 
 ## About The Project
 
-This project was completed for the software engineer application process at [OpenLoop Health](https://openloophealth.com/). I was tasked with building a form that displays the user's inputed first name, last name, email, and note.
+This project was completed for the software engineer application process at [OpenLoop Health](https://openloophealth.com/). The challenge was to build a form with validation that adds information to a list and allows the user to remove the information.
 
 
 The developer:
