@@ -21,7 +21,7 @@ The developer:
 
 ## Features in Progress
 
-- Form validation to check if user name and/or email already exists.
+- Form validation to check if user name and/or email already exists
 - Style user list for better readability
 
 ## Built With
