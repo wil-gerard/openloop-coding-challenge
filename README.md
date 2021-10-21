@@ -55,4 +55,4 @@ The developer:
 
 ## Preview
 
-You can check out a live preview at: [https://openloop-coding-challenge.netlify.app/](https://openloop-coding-challenge.netlify.app/)
+You can check out a live preview at: [https://wil-gerard-coding-challenge.netlify.app/](https://wil-gerard-coding-challenge.netlify.app/)
