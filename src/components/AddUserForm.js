@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 // Formik is a form library that helps with data flow in form state, validation/error messages, and form submission handling
 import { Formik, Form, } from 'formik';
 // Yup is an object schema validation library with it's own configuration prop in Formik called validationSchema
@@ -6,13 +6,18 @@ import * as yup from 'yup';
 import FormTextInput from './FormTextInput';
 import { Col, Row } from 'antd'
 
+
+
 const AddUserForm = ({ onSubmit }) => {
+
+    useEffect(() => {
+        document.querySelector("#firstNameInput").focus();
+    });
 
     const handleSubmit = useCallback(
         (values, { resetForm }) => {
             onSubmit(values);
             resetForm();
-            console.log('user submitted')
         },
         [onSubmit],
     );
@@ -49,7 +54,7 @@ const AddUserForm = ({ onSubmit }) => {
                     <Row gutter={[0, 6]} justify="space-between">
                         <Col span={24}>
                             <FormTextInput
-                                autoFocus={true}
+                                id="firstNameInput"
                                 label="First Name"
                                 name="firstName"
                                 type="text"

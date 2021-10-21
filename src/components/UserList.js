@@ -1,18 +1,22 @@
+import { Card, Button } from 'antd';
+import { UserDeleteOutlined } from '@ant-design/icons';
+
+
 const UserList = ({ users, removeUser }) => {
-    console.log(users)
     return (
-        <ul>
+        <>
             {users.length === 0 && (
-                <li>No users... 😞</li>
+                <Card type="inner">
+                    <div>No users... </div>
+                </Card>
             )}
-            {users.map(({ email, firstName, lastName, note}, userId) => (
-                <li key={email}>
-                    👋 Hey {firstName} {lastName}! | {email}
+            {users.map(({ email, firstName, lastName, note }, userId) => (
+                <Card type="inner" title={`${firstName} ${lastName} | ${email}`} key={email}>
                     <div>{note}</div>
-                    <button onClick={() => removeUser(userId)}>Remove 😞</button>
-                </li>
+                    <Button style={{ marginTop: '10px' }} onClick={() => removeUser(userId)}><UserDeleteOutlined />Remove</Button>
+                </Card>
             ))}
-        </ul>
+        </>
     )
 }
 

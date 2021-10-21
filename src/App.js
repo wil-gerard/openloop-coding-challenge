@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 import AddUserForm from './components/AddUserForm';
 import UserList from './components/UserList'
 import './App.css';
-import { Col, Row, Divider } from 'antd';
+import { Col, Row, Card } from 'antd';
 
 const App = () => {
   const [users, setUsers] = useState([])
@@ -24,28 +24,18 @@ const App = () => {
   );
 
   return (
-    <div>
-      <Row justify="center" gutter={[40]}>
-        <Col span={8}>
-          <div>
-            <h1>Add Users</h1>
-            <Divider />
-          </div>
-          <div>
+    <Row justify="center">
+      <Col span={8}>
+        <Card title="Add Users">
             <AddUserForm onSubmit={onSubmit} />
-          </div>
-        </Col>
-        <Col span={8}>
-          <div>
-            <h1>User List</h1>
-            <Divider />
-          </div>
-          <div>
+        </Card>
+      </Col>
+      <Col span={8}>
+        <Card title="User List">
             <UserList users={users} removeUser={removeUser} />
-          </div>
-        </Col>
-      </Row>
-    </div>
+        </Card>
+      </Col>
+    </Row>
   )
 }
 
