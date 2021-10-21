@@ -1,12 +1,10 @@
 import { useCallback, useEffect } from 'react';
 // Formik is a form library that helps with data flow in form state, validation/error messages, and form submission handling
-import { Formik, Form, } from 'formik';
+import { Formik, Form } from 'formik';
 // Yup is an object schema validation library with it's own configuration prop in Formik called validationSchema
 import * as yup from 'yup';
 import FormTextInput from './FormTextInput';
-import { Col, Row } from 'antd'
-
-
+import { Col, Row, Button } from 'antd';
 
 const AddUserForm = ({ onSubmit }) => {
 
@@ -45,13 +43,12 @@ const AddUserForm = ({ onSubmit }) => {
                     .max(50, 'Note must be less than 50 characters')
                     .required('Note is required'),
             })}
-            // We pass the <Formik> function a submit function that will be called when the form is submitted
             // onSubmit will only be executed if the validate function returns an empty {} errors object
             onSubmit={handleSubmit}
         >
             {({ dirty, isValid }) => (
                 <Form> {/* Render prop*/}
-                    <Row gutter={[0, 6]} justify="space-between">
+                    <Row gutter={[0, 8]} justify="space-between">
                         <Col span={24}>
                             <FormTextInput
                                 id="firstNameInput"
@@ -86,13 +83,12 @@ const AddUserForm = ({ onSubmit }) => {
                             />
                         </Col>
                         <Col span={24}>
-                            <button disabled={!dirty || !isValid} type="submit">+ Add User</button>
+                            <Button htmlType={'submit'} disabled={!dirty || !isValid} type="submit">+ Add User</Button>
                         </Col>
                     </Row>
                 </Form>
-            )
-            }
-        </Formik >
+            )}
+        </Formik>
     );
 };
 

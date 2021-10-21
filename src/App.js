@@ -24,19 +24,21 @@ const App = () => {
   );
 
   return (
-    <Row justify="center">
-      <Col span={8}>
-        <Card title="Add Users">
+    <Row className="main-container" justify="center" align="top" >
+      <Row justify="center">
+        <Col span={'md'} className="content-col">
+          <Card className="container-content" title="Add Users" bordered={true}>
             <AddUserForm onSubmit={onSubmit} />
-        </Card>
-      </Col>
-      <Col span={8}>
-        <Card title="User List">
+          </Card>
+        </Col>
+        <Col span={'md'} className="content-col">
+          <Card className="container-content" title="User List" bordered={false}>
             <UserList users={users} removeUser={removeUser} />
-        </Card>
-      </Col>
+          </Card>
+        </Col>
+      </Row>
     </Row>
-  )
-}
+  );
+};
 
 export default App;

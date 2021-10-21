@@ -1,7 +1,7 @@
 import { useField } from 'formik';
 import { Input } from 'antd';
 
-const AddUserFormInput = ({ label, ...props }) => {
+const FormTextInput = ({ label, ...props }) => {
     const [field, meta] = useField(props);
     return (
         <>
@@ -12,4 +12,4 @@ const AddUserFormInput = ({ label, ...props }) => {
     );
 };
 
-export default AddUserFormInput
+export default FormTextInput

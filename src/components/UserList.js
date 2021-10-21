@@ -11,13 +11,13 @@ const UserList = ({ users, removeUser }) => {
                 </Card>
             )}
             {users.map(({ email, firstName, lastName, note }, userId) => (
-                <Card type="inner" title={`${firstName} ${lastName} | ${email}`} key={email}>
+                <Card style={{ marginTop: '10px' }} type="inner" title={`${firstName} ${lastName} | ${email}`} key={email}>
                     <div>{note}</div>
                     <Button style={{ marginTop: '10px' }} onClick={() => removeUser(userId)}><UserDeleteOutlined />Remove</Button>
                 </Card>
             ))}
         </>
-    )
-}
+    );
+};
 
-export default UserList
+export default UserList;
