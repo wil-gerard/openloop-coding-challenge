@@ -43,7 +43,7 @@ The developer:
 
 #### 1. Clone the repo
 
-`git clone https://github.com/wil-gerard/react-runner.git`
+`https://github.com/wil-gerard/openloop-coding-challenge.git`
 
 #### 2. Install dependencies
 
@@ -55,4 +55,4 @@ The developer:
 
 ## Preview
 
-You can check out a live preview at: [https://openloop-coding-challenge.netlify.app/](https://openloop-coding-challenge.netlify.app/)
+You can check out a live preview at: [https://wil-gerard-coding-challenge.netlify.app/](https://wil-gerard-coding-challenge.netlify.app/)
