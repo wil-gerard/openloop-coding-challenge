@@ -5,6 +5,8 @@ This project was completed for the software engineer application process at [Ope
 The developer:
 * [William Gerard](https://github.com/wil-gerard)
 
+You can check out a live preview at: [https://wil-gerard-coding-challenge.netlify.app/](https://wil-gerard-coding-challenge.netlify.app/)
+
 ## Project Requirements
 
 - Built with React along with any other libraries that help get the job done
@@ -23,6 +25,14 @@ The developer:
 
 - Form validation to check if user name and/or email already exists
 - Style user list for better readability
+
+## The Process
+
+![0001](https://user-images.githubusercontent.com/74286884/138363806-d5eaa221-9eb5-441e-aa3f-75030cdc7677.jpg)
+
+- Map out project goals
+- Ideation with Figma wireframe
+- Finalizing development
 
 ## Built With
 
@@ -52,7 +62,3 @@ The developer:
 #### 3. Run App
 
 `yarn start` or `npm start`
-
-## Preview
-
-You can check out a live preview at: [https://wil-gerard-coding-challenge.netlify.app/](https://wil-gerard-coding-challenge.netlify.app/)
